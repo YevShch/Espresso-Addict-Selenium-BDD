@@ -76,7 +76,7 @@ In the top-right corner, there is the “Full screen” option.
 - Clicking “Go north” takes you to the location "on an empty street".
 - Clicking “Help” takes you to the “Help” location.
 - Clicking “Go south” takes you to the location "in the country-side".
-- Clicking “Wait” decreases Health by 5 points every second click.
+- Clicking “Wait” decreases Health alternately by 5 and 10 points with each click. It alternates: if 5 points are deducted first, the next deduction will be 10, and vice versa.
 - When clicking “Wait”, the text under the image alternates between: “You wait. In the sun without Java... Life is hard.” and “You wait. The sun is burning your skin. You long for a coffee.”
 
 ### Location: “in the Cloud Forest Cafe”
@@ -149,6 +149,7 @@ In the top-right corner, there is the “Full screen” option.
 **Footer:** Buttons: “Wait”, “Go south”, “Go east”, “Help”.
 *In the top-right corner*, there is the “Full screen” option.
 **Possible actions in this location:**
+- Clicking “Wait” decreases Health by 5 points every second click.                  
 - Clicking “Wait” alternates the text under the image between:
   “You feel so tired. Why can't coffee be free and abundant? Where have all the 'spressos gone?”
   and
@@ -167,7 +168,7 @@ In the top-right corner, there is the “Full screen” option.
 - Clicking “Go west” takes you back to the location "empty street."
 
 - Clicking “Help” takes you to the “Help” location.
-
+- Clicking “Wait” decreases Health by 3 points every second click.
 - Clicking “Wait” changes the text under the image to:
   “You wait. Beer, beer, beer... You don't care...”
 
