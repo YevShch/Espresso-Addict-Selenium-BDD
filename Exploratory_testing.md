@@ -1,31 +1,41 @@
-## Exploratory Testing Description of the Game "espresso-addict"
-I explored the game because I need to test it using Selenium, but there are no set criteria or user stories for this game. I’m also not allowed to look at the backend code. The game I tested is about a hipster who is a caffeine addict and needs to drink 5 cups of coffee a day to survive. A cup of coffee costs $5, but he only has $10 at the start of the game. To reach the goal of drinking five cups, he needs to move through different locations and wait for events that might give bonuses for acquiring cups of espresso. Waiting reduces health points.
+## Exploratory Testing Report for the Game "Espresso Addict" ☕
 
-### Page Layout:
-Each game page has a standard layout, consisting of a header, a central screen with the location, and a footer with buttons. There is also a “Full screen” option in the top-right corner. **The header** shows a scoreboard with health - "Health", money - "Money", cups of espresso - "Espressos", and the contents of your hipster bag - "In your hipster bag."
+I conducted exploratory testing of the game "Espresso Addict" to gather insights into the gameplay, mechanics, and interface. The aim was to explore the game’s flow and identify areas for testing using Selenium, without predefined criteria or access to backend code.
+The game revolves around a hipster who is a caffeine addict. His goal is to consume 5 cups of espresso a day to survive. The player starts with $10, and each cup of coffee costs $5. As the game progresses, the player navigates through different locations and encounters events that may provide bonuses, such as free cups of espresso. However, waiting in certain locations reduces health points.
 
-**The central screen** shows an image of the location with a description underneath.
-**The footer** contains several buttons for possible actions: moving to another location (each location has its own directions, usually 1-2 options like "go west", "go south", "go north", "go east"), a "wait" button, and a "help" button, which briefly explains the game’s purpose.
 
-### Game Start:
-At the beginning of the game, a scoreboard is displayed with:
+## Game Rules
+- Health decreases with waiting or certain actions.
+- Money is used to purchase espressos, which increase health.
+- If Health reaches 0 before consuming 5 espressos, the game ends in failure.
+- If the player consumes 5 espressos, the game ends in success.
 
-- Health - "Health" at 50,
-- Money - "Money" at 10,
-- Cups of espresso - "Espressos" at 0,
-- Contents of the bag - "In your hipster bag" showing "nothing cool."
-- The starting location is "outside Cloud Forest Cafe."
+## Game Start Initialization
+When the game begins, the following information is displayed on the scoreboard:
 
-### Game Rules
-- If the "Health" level reaches 0 and "Espressos" cups are fewer than 5, the hipster dies, and the game ends.
-- If the number of consumed "Espressos" reaches 5, the game ends.
+- **Health:** 50
+- **Money:** 10
+- **Espressos:** 0
+- **In your hipster bag:** "nothing cool"
+The player starts at the **location** "outside Cloud Forest Cafe."
 
-### Scoring System
+The footer contains action **buttons:** "Enter the cafe", "Wait", "Go north", "Go south" and "Help".
+Additionally, there is a "Full screen" option in the top-right corner.
+
+
+## Page Layout:
+Each game page (location) has a standard layout, consisting of a header, a central screen with the location, and a footer with buttons. There is also a “Full screen” option in the top-right corner. 
+- **The header** shows a scoreboard with health - "Health", money - "Money", cups of espresso - "Espressos", and the contents of your hipster bag - "In your hipster bag."
+- **The central screen** shows an image of the location with a description underneath.
+- **The footer** contains several buttons for possible actions: moving to another location (each location has its own directions, usually 1-2 options like "go west", "go south", "go north", "go east"), a "wait" button, and a "help" button, which briefly explains the game’s purpose.
+
+
+## Scoring System
 - For every espresso bought/received, 10 points are added to "Health," and 1 cup is added to "Espressos."
 - When buying an espresso, 5 points are deducted from "Money."
 - If an espresso is received as a bonus, no money is deducted.
 
-### End of the Game
+## End of the Game
 1. If "Health" reaches 0 and "Espressos" is less than 5, the hipster dies. The game ends, and the central screen displays an image with the caption:
   "Your health has deteriorated too much – you feel almost dead. Find a caffeine-detox clinic?"
   A "Play again" button appears, and the "Health" status shows 0.
@@ -35,18 +45,7 @@ At the beginning of the game, a scoreboard is displayed with:
   A "Play again" button also appears.
 
 
-### Locations:
-There are 7 locations in total in the game:
-
-- "outside the Cloud Forest Cafe",
-- "in the Cloud Forest Cafe",
-- "on an empty street",
-- "in a crowded bar",
-- "in the country-side",
-- "A guitarist and a sax player",
-- "Help".
-
-### Events:
+## Game Events
 All events occur only once throughout the game.
 
 - "You feel alive and pumping"
@@ -55,8 +54,19 @@ All events occur only once throughout the game.
 - "Come on up and jam with us?"
 - "The barista is in a dark corner"
 
-### Locations:
-#### Starting Location: “outside the Cloud Forest Cafe”
+## Locations:
+There are 6 locations in total in the game:
+
+- "outside the Cloud Forest Cafe",
+- "in the Cloud Forest Cafe",
+- "on an empty street",
+- "in a crowded bar",
+- "in the country-side",
+- "A guitarist and a sax player",
+And there is a "Help" function available in each location
+
+### Location Descriptions
+### Starting Location: “outside the Cloud Forest Cafe”
 **Header:** The scoreboard shows Health, Money, Espressos, and “In your hipster bag”.
 **Central screen:** The image displays the cafe with the caption “You are standing outside the Cloud Forest Cafe. The sun is shining.”
 **Footer: Buttons:** “Enter the cafe”, “Wait”, “Go north”, “Go south”, “Help”.
@@ -69,7 +79,7 @@ In the top-right corner, there is the “Full screen” option.
 - Clicking “Wait” decreases Health by 5 points every second click.
 - When clicking “Wait”, the text under the image alternates between: “You wait. In the sun without Java... Life is hard.” and “You wait. The sun is burning your skin. You long for a coffee.”
 
-#### Location: “in the Cloud Forest Cafe”
+### Location: “in the Cloud Forest Cafe”
 **Header:** Displays Health, Money, Espressos, and “In your hipster bag”.
 **Central screen:** The image shows the cafe with the caption “You are in the Cloud Forest Cafe. People are reading, talking, and drinking coffee. Mmm... Coffee... The barista says: 'How about an espresso? It's only $5.'"
 **Footer:** Buttons: “Exit the cafe”, “Buy an espresso”, “Wait”, “Help”.
@@ -94,7 +104,7 @@ In the top-right corner, there is the “Full screen” option.
 
 - Clicking “Give beer to barista” increases Health by 20, Espressos by 2, and changes the contents of “In your hipster bag” to “nothing cool”, without affecting Money.
 
-#### Location: "in the country-side"
+### Location: "in the country-side"
 **Header:** Displays Health, Money, Espressos, and “In your hipster bag”.
 **Central screen:** The image shows the countryside with the caption: “You walk and walk. Now you're out in the countryside. Just great. No coffee here…”
 **Footer:** Buttons: “Wait”, “Go west”, “Go north”, “Help”.
@@ -109,7 +119,7 @@ In the top-right corner, there is the “Full screen” option.
   and
   “You stand around for a while... You feel so tired. Clearly not enough coffee.”
 
-#### Location: “A guitarist and a sax player”
+### Location: “A guitarist and a sax player”
 **Header:** Displays Health, Money, Espressos, and “In your hipster bag.”
 **Central screen:** The image shows two musicians with the caption: “A guitarist and a sax player make some funky noise. The guitarist doesn't sing too well though.”
 **Footer:** Buttons: “Wait”, “Go east”, “Help”.
@@ -132,7 +142,7 @@ In the top-right corner, there is the “Full screen” option.
   and
   “You wait. The music is getting boring. You long for a coffee.”
 
-#### Location: "empty street"
+### Location: "on an empty street"
 **Header:** Displays Health, Money, Espressos, and “In your hipster bag.”
 **Central screen:** The image shows an empty street with the caption:
 “You are on an empty street. Not much action around here.”
@@ -147,7 +157,7 @@ In the top-right corner, there is the “Full screen” option.
 - Clicking “Go east” takes you to the location "in a crowded bar."
 - Clicking “Help” takes you to the “Help” location.
 
-#### Location: "in a crowded bar"
+### Location: "in a crowded bar"
 **Header:** Displays Health, Money, Espressos, and “In your hipster bag.”
 **Central screen:** The image shows a busy bar with the caption:
 “You are in a crowded bar where everyone is friendly. But no coffee in sight. Everyone's drinking beer.”
@@ -170,7 +180,8 @@ In the top-right corner, there is the “Full screen” option.
   and
   “It's kind of nice here. But no coffee...”
 
-#### Location: "Help"
+### Function "Help"
+This function is available in each location.
 **Header:** Displays Health, Money, Espressos, and “In your hipster bag.”
 **Central screen:** The image shows an explanation screen with the caption:
 “You're a hipster. And you love iThings and your cool bag. But right now you're almost broke. And that's bad. Because you're an Espresso Addict too, a caffeine junkie. You need your fix: 5 cups of espresso. Otherwise, you will soon start to feel really shaky! So go get your fix... Lurk around and wait for opportunities!”
@@ -178,3 +189,6 @@ In the top-right corner, there is the “Full screen” option.
 *In the top-right corner*, there is the “Full screen” option.
 **Possible actions in this location:**
 - Clicking “Continue” returns you to the previous location.
+
+### Conclusion
+The game "Espresso Addict" offers a variety of locations and events that dynamically affect the player’s progress. The consistent layout across different pages makes it easier to automate the testing process using Selenium. Future tests can focus on validating the game's core mechanics, such as health and money reduction, event triggers, and the endgame conditions.

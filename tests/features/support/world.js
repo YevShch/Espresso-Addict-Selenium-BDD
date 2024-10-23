@@ -1,4 +1,4 @@
-import seleniumWebdriver, { By } from 'selenium-webdriver';
+import seleniumWebdriver, { By, until } from 'selenium-webdriver';
 import { setWorldConstructor, setDefaultTimeout } from '@cucumber/cucumber';
 import { timeout, browser, headless } from '../../config.js';
 import chrome from 'selenium-webdriver/chrome.js';
@@ -35,12 +35,12 @@ class CustomWorld {
 
   async getWait(cssSelector, maxTimeToWaitMs = 5000) {
     return await this.driver.wait(
-      until.elementLocated(By.css(cssSelector)), maxTimeWaitMs);
+      until.elementLocated(By.css(cssSelector)), maxTimeToWaitMs);
   }
 
   async getByXPathWait(xPath, maxTimeToWaitMs = 5000) {
     return await this.driver.wait(
-      until.elementLocated(By.xpath(xPath)), maxTimeWaitMs);
+      until.elementLocated(By.xpath(xPath)), maxTimeToWaitMs);
   }
 
 }
