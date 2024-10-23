@@ -17,9 +17,9 @@ Feature: Money scoring
   Scenario: Value of Money do not changes when receiving a bonus "a can of beer"
     Given I am at the location " in a crowded bar"
     And the value of my "Money" is 10
-    And "In the hipsters bag" contains "nothing cool"
-    When I receive the bonus "Jam with the band"
-    Then "In the hipsters bag" contains "a can of beer"
+    And the value of my "In the hipster bag" is "nothing cool"
+    When I wait until I receive the bonus "a can of beer" 
+    Then the value of my "In the hipster bag" should be "a can of beer"
     And the value of my "Money" should be 10
   
 

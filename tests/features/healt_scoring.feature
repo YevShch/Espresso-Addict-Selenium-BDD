@@ -5,12 +5,12 @@ Feature: Health scoring
     Then the value of my "Health" is 50
     And the value of my "Money" is 10
     And the value of my "Espressos" is 0
-    And "In the hipsters bag" contains "nothing cool"
+    And the value of my "In the hipster bag" is "nothing cool"
     When I choose to "Buy an espresso"
     Then the value of my "Health" should be 60
     And the value of my "Money" should be 5
     And the value of my "Espressos" should be 1
-    And my hipster bag should contain "nothing cool"
+    And the value of my "In the hipster bag" should be "nothing cool"
 
 
 
@@ -21,7 +21,7 @@ Feature: Health scoring
     Then the value of my "Health" should be <expected_health>
     And the value of my "Money" should be 10
     And the value of my "Espressos" should be 0
-    And my hipster bag should contain "nothing cool"
+    And the value of my "In the hipster bag" should be "nothing cool"
 
     Examples:
       | location                       | initial_health  | click_count  | expected_health  |

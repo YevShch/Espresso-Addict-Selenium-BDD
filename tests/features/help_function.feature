@@ -6,6 +6,11 @@ Feature: Help function
     Then I should see a brief description of the game's purpose
     And I should have an option to continue playing
 
+  Scenario: Clicking Continue returns the player to their location
+    Given I am on the "<location>"
+    When I click the "Help" button
+    And I click the "Continue" button
+    Then I should be back at "<location>"
 
     Examples:
       | location                       |                                                                                                                                                                                     |
