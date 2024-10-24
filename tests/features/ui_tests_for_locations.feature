@@ -1,7 +1,7 @@
 Feature: Verify header, central screen, and footer are displayed correctly in different locations
 
   Scenario Outline: Verify header, central screen, and footer for different locations
-    Given I am on the "<location>"
+    Given I am at the "<location>"
     Then I should see a header with the scoreboard
     And I should see the central screen with the location image and description
       | description                                        |

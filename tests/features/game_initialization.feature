@@ -20,3 +20,4 @@ Feature: Game initialization
       | Go south       |
       | Wait           |
       | Help           |
+

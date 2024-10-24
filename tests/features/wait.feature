@@ -1,7 +1,7 @@
   Feature: wait functionality
   
   Scenario Outline: When I wait my Health decreases depending on the location 
-    Given I am on the "<location>"
+    Given I am at the "<location>"
     And the value of my "Health" is <initial_health>
     When I choose to click "Wait" <click_count> times
     Then the value of my "Health" should be <expected_health>
@@ -21,7 +21,7 @@
 
 
   Scenario Outline: When I wait at any location, the text under the picture changes
-    Given I am on the "<location>"
+    Given I am at the "<location>"
     And I note the current text under the picture
     When I choose to "Wait"
     Then the text under the picture is different from the initial text
@@ -41,7 +41,7 @@
 
  
   Scenario Outline: When I wait at a specific location, the text alternates between two variations
-    Given I am on the "<location>"
+    Given I am at the "<location>"
     When I choose to "Wait"
     Then the text under the picture changes to "<text_variation_1>"
     When I choose to "Wait"

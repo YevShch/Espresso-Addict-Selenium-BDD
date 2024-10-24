@@ -1,5 +1,4 @@
 Feature: "Give beer to barista" button functionality
-visibility based on events and inventory
 
   Background: Player has a can of beer
     Given I am at the location "in a crowded bar"
@@ -8,12 +7,12 @@ visibility based on events and inventory
 
   Scenario: "Give beer to barista" button is not visible until the event with the barista occurs
     When I move to the location "in the Cloud Forest Cafe"
-    Then I should not see a button "Give beer to barista"
+    Then the button "Give beer to barista" should be visible
 
   Scenario:"Give beer to barista" button is visible when player has a beer and the event with the barista has occurred.
     When I move to the location "in the Cloud Forest Cafe"
     And I wait until the event "The barista is in a dark corner" occurs
-    Then I should see a button "Give beer to barista"
+    Then the button "Give beer to barista" should be visible
 
   Scenario: When I give beer to the barista, scores should update correctly
     When I move to the location "in the Cloud Forest Cafe"
@@ -22,7 +21,7 @@ visibility based on events and inventory
     And the value of my "Money" is 10
     And the value of my "Espressos" is 0
     And the value of my "bag" is "a can of beer"
-    When I click to "Give beer to barista"
+    When I click the "Give beer to barista" button
     Then the value of my "Health" should be 70
     And the value of my "Money" should be 10
     And the value of my "Espressos" should be 2
@@ -31,8 +30,8 @@ visibility based on events and inventory
   Scenario: "Give beer to barista" button should disappear after being clicked
     When I move to the location "in the Cloud Forest Cafe"
     And I wait until the event "The barista is in a dark corner" occurs
-    And I should see a button "Give beer to barista"
-    And I click to "Give beer to barista"
+    And the button "Give beer to barista" should be visible
+    And I click the "Give beer to barista" button
     Then I should not see a button "Give beer to barista"
 
 

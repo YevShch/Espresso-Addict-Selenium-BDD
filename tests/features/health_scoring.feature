@@ -1,17 +1,17 @@
 Feature: Health scoring
 
   Scenario: Health increases when the player drinks espresso
-    Given that I am on the location "in the Cloud Forest Cafe"
+    Given I am at the location "in the Cloud Forest Cafe"
     Then the value of my "Health" is 50
     And the value of my "Espressos" is 0
-    When I choose to "Buy an espresso"
+    When I click the "Buy an espresso" button
     Then the value of my "Health" should be 60
     And the value of my "Espressos" should be 1
    
 
 
   Scenario Outline: Health decreases based on location when the player waits
-    Given I am on the "<location>"
+    Given I am at the "<location>"
     And the value of my "Health" is <initial_health>
     When I choose to click "Wait" <click_count> times
     Then the value of my "Health" should be <expected_health>
@@ -34,4 +34,5 @@ Feature: Health scoring
     And the value of my "Health" is 50
     When I choose to "Wait" until my "Health" reaches 0
     Then the game is over
+    And the value of my "Health" is 0
    

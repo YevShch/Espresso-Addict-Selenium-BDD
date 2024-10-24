@@ -2,6 +2,7 @@ Feature: Events
 
   Background:
     Given I am at the location "<location>"
+    And I see the current picture of the location
 
   Scenario Outline: Event occurs in a specific location
     When I wait until the event "<event_message>" occurs
@@ -30,7 +31,7 @@ Feature: Events
       | in a crowded bar             | a can of beer for free          |
 
   Scenario Outline: Event does not occur in non-related locations
-    Given I am on the "<location>"
+    Given I am at the "<location>"
     When I choose to "Wait" repeatedly
     Then I should not see the event message "<event_message>"
 
