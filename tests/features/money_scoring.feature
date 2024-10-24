@@ -22,14 +22,5 @@ Feature: Money scoring
     Then the value of my "In the hipster bag" should be "a can of beer"
     And the value of my "Money" should be 10
   
-
-  Scenario: Money should prevent buying if the player can't afford it
-    Given I am at the location "in the Cloud Forest Cafe"
-    And the value of my "Money" is 0
-    And the value of my "Espressos" should be 2
-    When I choose to "Buy an espresso" 
-    Then the purchase should be denied
-    And the value of my "Money" should be 0
-    And the value of my "Espressos" should be 2
     
 

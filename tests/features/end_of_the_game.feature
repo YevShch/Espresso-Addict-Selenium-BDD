@@ -8,7 +8,7 @@ Feature: End of the Game
     And a "Play again" button should appear
 
 
-  Scenario: Game ends when espressos reach 5
+  Scenario: Player wins the game when espressos reach 5
     Given I play until the game ends when espressos reach 5
     When I have "Espressos" at 5
     Then the game should end
