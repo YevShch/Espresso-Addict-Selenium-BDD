@@ -13,8 +13,7 @@ Feature: Help function
     Then I should be back at "<location>"
 
     Examples:
-      | location                       |                                                                                                                                                                                     |
-      | ------------------------------ |                                                                  
+      | location                       |                                                                                                                                                                                                                                                      
       | outside the Cloud Forest Cafe  |                                                                                          
       | in the Cloud Forest Cafe       | 
       | on an empty street             |                                                                                                       

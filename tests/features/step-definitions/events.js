@@ -1,10 +1,10 @@
-
 import { Given, When, Then } from '@cucumber/cucumber';
 import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
+import startLocation from '../common-steps/startLocation.js';
 
 Given('I am at the location {string}', async function(location){
-  // TODO: implement step
+  await startLocation( location )
 });
 
 Given('I see the current picture of the location', async function(){

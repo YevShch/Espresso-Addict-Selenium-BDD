@@ -8,8 +8,7 @@ Feature: Full screen option
     Then the game should exit full screen mode
 
  Examples:
-      | location                       |                                                                                                                                                                                     |
-      | ------------------------------ |                                                                  
+      | location                       |                                                                                                                                                                                                                                                     
       | outside the Cloud Forest Cafe  |                                                                                          
       | in the Cloud Forest Cafe       | 
       | on an empty street             |                                                                                                       

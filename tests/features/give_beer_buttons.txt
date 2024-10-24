@@ -1,5 +1,17 @@
 Feature: "Give beer to barista" button functionality
 
+  Scenario: "Give beer to barista" button hidden if I have no beer
+    Given I am at the location "in the Cloud Forest Cafe"
+    And the value of my "bag" is "nothing cool"
+    Then I should not see a button "Give beer to barista"
+ 
+  Scenario: "Give beer to barista" button hidden without beer, even when barista event happens
+    Given I am at the location "in the Cloud Forest Cafe"
+    And the value of my "bag" is "nothing cool"
+    When I wait until the event "The barista is in a dark corner" occurs
+    Then I should not see a button "Give beer to barista"
+
+
   Background: Player has a can of beer
     Given I am at the location "in a crowded bar"
     And I wait until I receive the bonus "a can of beer"
@@ -35,14 +47,4 @@ Feature: "Give beer to barista" button functionality
     Then I should not see a button "Give beer to barista"
 
 
-  Background: Player has no beer
-    Given I am at the location "in the Cloud Forest Cafe"
-    And the value of my "bag" is "nothing cool"
-
-  Scenario: "Give beer to barista" button hidden if I have no beer
-    Then I should not see a button "Give beer to barista"
-
-  Scenario: "Give beer to barista" button hidden without beer, even when barista event happens
-    Given I should not see a button "Give beer to barista"
-    When I wait until the event "The barista is in a dark corner" occurs
-    Then I should not see a button "Give beer to barista"
+ 

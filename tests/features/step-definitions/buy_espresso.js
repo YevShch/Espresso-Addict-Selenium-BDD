@@ -1,10 +1,10 @@
-
 import { Given, When, Then } from '@cucumber/cucumber';
 import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
+import startLocation from '../common-steps/startLocation.js';
 
-Given('I am at the location {string}', async function(a){
-  // TODO: implement step
+Given('I am at the location {string}', async function(location){
+  await startLocation( location )
 });
 
 Given('the value of my {string} is {float}', async function(a, b){
