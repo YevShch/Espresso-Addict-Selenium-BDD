@@ -14,10 +14,8 @@ Feature: Buying an espresso
 
   Scenario: Player cannot buy an espresso if they have no money
     Given I am at the location "in the Cloud Forest Cafe"
-    And I byed 2 espressos 
+    When I bought 2 espressos
     And the value of my "Money" is 0
     And the value of my "Espressos" should be 2
-    When I click the "Buy an espresso" button
-    Then the purchase should be denied
-    And the value of my "Money" should be 0
-    And the value of my "Espressos" should be 2
+    Then I should not see "Buy an espresso" button
+   
