@@ -3,9 +3,9 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 
-Given('I am at the location {string}', async function(current_location){
-  // TODO: implement step
-});
+// Given('I am at the location {string}', async function(current_location){
+//   // TODO: implement step
+// });
 
 When('I click on {string}', async function(action){
   // TODO: implement step

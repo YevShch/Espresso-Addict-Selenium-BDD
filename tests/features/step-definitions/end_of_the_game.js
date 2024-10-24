@@ -7,9 +7,9 @@ Given('I play until the game ends when health reaches {float}', async function(a
   // TODO: implement step
 });
 
-When('the value of my {string} is {float}', async function(a, b){
-  // TODO: implement step
-});
+// When('the value of my {string} is {float}', async function(a, b){
+//   // TODO: implement step
+// });
 
 Then('the game should end', async function(){
   // TODO: implement step

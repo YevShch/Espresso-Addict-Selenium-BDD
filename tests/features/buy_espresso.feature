@@ -17,7 +17,7 @@ Feature: Buying an espresso
     And I byed 2 espressos 
     And the value of my "Money" is 0
     And the value of my "Espressos" should be 2
-    When I choose to "Buy an espresso"
+    When I click the "Buy an espresso" button
     Then the purchase should be denied
     And the value of my "Money" should be 0
     And the value of my "Espressos" should be 2
