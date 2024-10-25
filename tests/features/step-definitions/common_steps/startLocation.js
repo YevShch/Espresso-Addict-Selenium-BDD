@@ -2,6 +2,7 @@ import { By, until } from 'selenium-webdriver';
 import { driver } from '../../support/world.js';
 
 export default async function startLocation ( location ) {
+  console.log( `Starting location: ${ location }` );
   try {
     await driver.get( 'http://localhost:3000' ); // Используем driver напрямую
     console.log( `Loading game at: http://localhost:3000` );
