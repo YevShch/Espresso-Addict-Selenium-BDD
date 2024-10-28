@@ -11,7 +11,7 @@ Feature: Events
     Examples:
       | location                     | event_message                   | event_text                                                                                                                                                                                                                                        | button_text          |
       | in the Cloud Forest Cafe     | The barista is in a dark corner | The barista is in a dark corner phoning a friend. You overhear parts of the conversion:    |                      |
-      | A guitarist and a sax player | jam with us?                    | The guitarist shouts out to you: 'You look like a hip kid, why don't                       | Jam with the band    |
+      | A guitarist and sax player   | jam with us?                    | The guitarist shouts out to you: 'You look like a hip kid, why don't                       | Jam with the band    |
       | in a crowded bar             | a can of beer for free          | The bartender offers you a can of beer for free...                                         |                      |
 
   Scenario Outline: Event only occurs once during the game
@@ -24,7 +24,7 @@ Feature: Events
     Examples:
       | location                     | event_message                   |
       | in the Cloud Forest Cafe     | The barista is in a dark corner |
-      | A guitarist and a sax player | jam with us?                    |
+      | A guitarist and sax player   | jam with us?                    |
       | in a crowded bar             | a can of beer for free          |
 
   Scenario Outline: Event does not occur in non-related locations
@@ -37,15 +37,15 @@ Feature: Events
       | outside the Cloud Forest Cafe | The barista is in a dark corner |
       | on an empty street            | The barista is in a dark corner |
       | in a crowded bar              | The barista is in a dark corner |
-      | in the country-side           | The barista is in a dark corner |
-      | A guitarist and a sax player  | The barista is in a dark corner |
+      | in the contry-side            | The barista is in a dark corner |
+      | A guitarist and sax player    | The barista is in a dark corner |
       | in the Cloud Forest Cafe      | jam with us?                    |
       | outside the Cloud Forest Cafe | jam with us?                    |
       | on an empty street            | jam with us?                    |
       | in a crowded bar              | jam with us?                    |
-      | in the country-side           | jam with us?                    |
+      | in the contry-side            | jam with us?                    |
       | in the Cloud Forest Cafe      | a can of beer for free          |
       | outside the Cloud Forest Cafe | a can of beer for free          |
       | on an empty street            | a can of beer for free          |
-      | in the country-side           | a can of beer for free          |
-      | A guitarist and a sax player  | a can of beer for free          |
+      | in the contry-side            | a can of beer for free          |
+      | A guitarist and sax player    | a can of beer for free          |

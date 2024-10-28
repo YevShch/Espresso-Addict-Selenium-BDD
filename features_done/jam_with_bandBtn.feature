@@ -1,12 +1,12 @@
 Feature: "Jam with the band" button functionality
 
   Background: Waiting for the event "jam with the band"
-    Given I am at the location "A guitarist and a sax player"
+    Given I am at the location "A guitarist and sax player"
     And I should not see a button "Jam with the band"
     When I wait until the event "jam with us?" occurs
 
   Scenario: "Jam with the band" button is visible after event "jam with the band" occurs
-    Then the button "Jam with the band" should be visible
+    Then I should see the button "Jam with the band"
 
   Scenario: "Jam with the band" button should disappear after being clicked
     When I click the "Jam with the band" button

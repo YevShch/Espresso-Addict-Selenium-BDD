@@ -13,5 +13,6 @@ Feature: Full screen option
       | in the Cloud Forest Cafe      |
       | on an empty street            |
       | in a crowded bar              |
-      | in the countryside            |
-      | A guitarist and a sax player  |
+      | in the contry-side            |
+      | A guitarist and sax player    |
+
