@@ -1,5 +1,5 @@
 import { When, Then } from '@cucumber/cucumber';
-import { By, until } from 'selenium-webdriver';
+import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 
 
@@ -30,15 +30,18 @@ Then('the game should switch to full screen mode', async function(){
 
 When( 'I press the {string} key on my computer', async function ( a ) {
   await this.driver.sleep( 1000 ); 
-  // const actions = this.driver.actions();
-  // await actions.sendKeys( Key.ESCAPE ).perform();
-  await this.driver.executeScript( 'document.dispatchEvent(new KeyboardEvent("keydown", {key: "Escape"}));' ); 
-  // const body = await this.driver.findElement( By.tagName( 'body' ) );
-  // await body.sendKeys( Key.ESCAPE );
+  
+  // await this.driver.executeScript( 'document.dispatchEvent(new KeyboardEvent("keydown", {key: "Escape"}));' ); 
 
-  // async function pressEscape ( element ) {
-  //   await element.sendKeys( Key.ESCAPE );
-  // }
+  // const element = await this.driver.findElement( { css: 'body' } );
+  // await element.sendKeys( Key.ESCAPE );
+
+  const element = await this.driver.findElement( { css: 'body' } );
+
+
+  await element.click();
+
+  await element.sendKeys( Key.ESCAPE );
 });
 
 Then('the game should exit full screen mode', async function(){

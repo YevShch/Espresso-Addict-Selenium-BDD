@@ -3,8 +3,12 @@ import { setWorldConstructor, setDefaultTimeout } from '@cucumber/cucumber';
 import { timeout, browser, headless } from '../../config.js';
 import chrome from 'selenium-webdriver/chrome.js';
 
+const GITHUB_ACTIONS = process.env[ 'GITHUB_ACTIONS' ] === 'true';
+
 const options = new chrome.Options();
-headless && options.addArguments('--headless=new');
+// Run headless if config says so or if we are running in GitHub actions 
+( headless || GITHUB_ACTIONS ) && options.addArguments( '--headless=new' );
+
 
 
 export const driver = new seleniumWebdriver
