@@ -3,20 +3,9 @@ import { setWorldConstructor, setDefaultTimeout } from '@cucumber/cucumber';
 import { timeout, browser, headless } from '../../config.js';
 import chrome from 'selenium-webdriver/chrome.js';
 
-// const options = new chrome.Options();
-// headless && options.addArguments('--headless=new');
-
 const options = new chrome.Options();
-if ( headless ) {
-  options.addArguments(
-    '--headless',
-    '--disable-gpu',
-    '--no-sandbox',
-    '--disable-dev-shm-usage',
-    '--remote-debugging-port=9222',
-    '--window-size=1920,1080'
-  );
-}
+headless && options.addArguments('--headless=new');
+
 
 export const driver = new seleniumWebdriver
   .Builder()
