@@ -16,11 +16,11 @@
   "dependencies": {
     "@cucumber/cucumber": "^11.0.1",
     "chai": "^5.1.1",
-    "chromedriver": "^130.0.0",
+    "chromedriver": "^130.0.1",
     "cucumber-html-reporter": "^6.0.0",
+    "express": "^4.21.1",
     "open": "^10.1.0",
-    "selenium-webdriver": "^4.25.0",
-    "express": "^4.21.1"
+    "selenium-webdriver": "^4.25.0"
   },
   "devDependencies": {
     "@qavajs/console-formatter": "^0.8.0"
