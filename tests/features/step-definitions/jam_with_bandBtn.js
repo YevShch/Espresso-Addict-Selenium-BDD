@@ -3,7 +3,7 @@ import { By, until} from 'selenium-webdriver';
 import { expect } from 'chai';
 
 
-Given( 'I should not see a button {string}', async function ( buttonName ) {
+Given( 'I should not see the {string} button', async function ( buttonName ) {
   // Find all buttons in the menu
   const buttons = await this.driver.wait(
     until.elementsLocated( By.css( 'menu.choices li' ) ),

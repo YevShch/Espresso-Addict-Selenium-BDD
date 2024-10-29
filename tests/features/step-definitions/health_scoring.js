@@ -74,3 +74,9 @@ Then( 'the game should end with the message {string}', async function ( endGameM
   expect( text ).to.include( endGameMessage )
 } );
 
+
+
+Then( 'the value of my {string} should decrease', async function ( sectionName ) {
+    const healthValueAfter = await getValueOfScores( sectionName );
+  expect( this.healthValueBefore ).greaterThan( healthValueAfter );
+} );

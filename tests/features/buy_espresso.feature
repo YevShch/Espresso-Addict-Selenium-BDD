@@ -17,5 +17,5 @@ Feature: Buying an espresso
     When I bought 2 espressos
     And the value of my "Money" is 0
     And the value of my "Espressos" should be 2
-    Then I should not see "Buy an espresso" button
+    Then I should not see the "Buy an espresso" button
    

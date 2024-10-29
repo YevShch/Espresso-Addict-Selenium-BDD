@@ -65,9 +65,9 @@ Given( 'the value of my {string} should be {string}', async function ( sectionNa
 } );
 
 
-Then( 'I should not see {string} button', async function ( buttonText ) {
-  const button = await this.driver.findElements( By.xpath(
-    `//menu[@class='choices']//li[text()='${ buttonText }']` ) );
-  expect( button.length ).to.equal( 0, `Expected button '${ buttonText }' to not be present in the DOM.` );
-} );
+// Then( 'I should not see the {string} button', async function ( buttonText ) {
+//   const button = await this.driver.findElements( By.xpath(
+//     `//menu[@class='choices']//li[text()='${ buttonText }']` ) );
+//   expect( button.length ).to.equal( 0, `Expected button '${ buttonText }' to not be present in the DOM.` );
+// } );
 
