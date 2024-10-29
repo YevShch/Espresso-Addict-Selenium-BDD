@@ -8,16 +8,18 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
 //   return driver.manage().window().maximize();
 // });
 
-BeforeAll( async function () {
-  try {
-    console.log( "Starting driver..." );
-    await driver.manage().window().maximize();
-    console.log( "Driver started and window maximized." );
-  } catch ( error ) {
-    console.error( "Error during BeforeAll hook:", error );
-    throw error; 
-  }
-} );
+BeforeAll( async () => {
+  const options = new chrome.Options();
+  options.addArguments( '--headless' ); // Run in headless mode
+  options.addArguments( '--no-sandbox' ); // Needed for GitHub Actions
+  options.addArguments( '--disable-dev-shm-usage' ); // Prevent issues with /dev/shm
+  options.addArguments( '--disable-gpu' ); // Disable GPU acceleration
+
+  global.driver = await new Builder()
+    .forBrowser( 'chrome' )
+    .setChromeOptions( options )
+    .build();
+} );;
 
 AfterAll(function () {
   return driver.quit();
