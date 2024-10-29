@@ -1,6 +1,7 @@
 import { BeforeAll, AfterAll, AfterStep } from '@cucumber/cucumber';
 import { sleepBetweenSteps } from '../../config.js';
 import { driver } from './world.js';
+import chrome from 'selenium-webdriver/chrome.js';
 
 const sleep = ms => new Promise(res => setTimeout(res, ms));
 
