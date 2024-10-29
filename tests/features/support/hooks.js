@@ -4,8 +4,8 @@ import { driver } from './world.js';
 
 const sleep = ms => new Promise(res => setTimeout(res, ms));
 
-BeforeAll(function () {
-  return driver.manage().window().maximize();
+BeforeAll(async function () {
+  return await driver.manage().window().maximize();
 });
 
 AfterAll(function () {
