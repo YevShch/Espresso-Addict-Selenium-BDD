@@ -1,10 +1,10 @@
-import { By, until } from 'selenium-webdriver';
 import { driver } from '../../support/world.js';
+import clickButton from './clickButton.js'
 
 export default async function startLocation ( location ) {
   console.log( `Starting location: ${ location }` );
   try {
-    await driver.get( 'http://localhost:3000' ); // Используем driver напрямую
+    await driver.get( 'http://localhost:3000' ); 
     console.log( `Loading game at: http://localhost:3000` );
 
     switch ( location ) {
@@ -12,73 +12,28 @@ export default async function startLocation ( location ) {
         break;
 
       case 'in the Cloud Forest Cafe':
-        const button = await driver.wait(
-          until.elementLocated( By.xpath( "//*[contains(text(),'Enter the cafe')]" ) ),
-          10000
-        );
-        await driver.wait( until.elementIsVisible( button ), 10000 );
-        await driver.wait( until.elementIsEnabled( button ), 10000 );
-        await button.click();
+        await clickButton( 'Enter the cafe' );
         break;
 
 
       case 'on an empty street':
-        const button1 = await driver.wait(
-          until.elementLocated( By.xpath( "//*[contains(text(),'Go north')]" ) ),
-          10000
-        );
-        await driver.wait( until.elementIsVisible( button1 ), 10000 );
-        await driver.wait( until.elementIsEnabled( button1 ), 10000 );
-        await button1.click();
+        await clickButton( 'Go north' );
         break;
 
       case 'in a crowded bar':
-        const button2 = await driver.wait(
-          until.elementLocated( By.xpath( "//*[contains(text(),'Go north')]" ) ),
-          10000
-        );
-        await driver.wait( until.elementIsVisible( button2 ), 10000 );
-        await driver.wait( until.elementIsEnabled( button2 ), 10000 );
-        await button2.click();
-
-        const button3 = await driver.wait(
-          until.elementLocated( By.xpath( "//*[contains(text(),'Go east')]" ) ),
-          10000
-        );
-        await driver.wait( until.elementIsVisible( button3 ), 10000 );
-        await driver.wait( until.elementIsEnabled( button3 ), 10000 );
-        await button3.click();
+        await clickButton( 'Go north' );
+        await clickButton( 'Go east' );
         break;
 
-      // Case with single button click
+      
       case 'in the contry-side':
-        const button4 = await driver.wait(
-          until.elementLocated( By.xpath( "//*[contains(text(),'Go south')]" ) ),
-          10000
-        );
-        await driver.wait( until.elementIsVisible( button4 ), 10000 );
-        await driver.wait( until.elementIsEnabled( button4 ), 10000 );
-        await button4.click();
+        await clickButton( 'Go south' );
+       
         break;
 
       case 'A guitarist and sax player':
-        // Wait until the "Go south" button is located and clickable
-        const button5 = await driver.wait(
-          until.elementLocated( By.xpath( "//*[contains(text(),'Go south')]" ) ),
-          10000
-        );
-        await driver.wait( until.elementIsVisible( button5 ), 10000 );
-        await driver.wait( until.elementIsEnabled( button5 ), 10000 );
-        await button5.click();
-
-        // Wait until the "Go west" button is located and clickable
-        const button6 = await driver.wait(
-          until.elementLocated( By.xpath( "//*[contains(text(),'Go west')]" ) ),
-          10000
-        );
-        await driver.wait( until.elementIsVisible( button6 ), 10000 );
-        await driver.wait( until.elementIsEnabled( button6 ), 10000 );
-        await button6.click();
+        await clickButton( 'Go south' );
+        await clickButton( 'Go west' );
         break;
 
       default:

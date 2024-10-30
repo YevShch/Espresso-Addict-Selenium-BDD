@@ -1,5 +1,4 @@
 import { By, until } from 'selenium-webdriver';
-import { driver } from '../../support/world.js';
 import clickButton from './clickButton.js';
 
 export default async function winTheGame() {

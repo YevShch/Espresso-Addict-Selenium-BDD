@@ -1,5 +1,4 @@
 import { By, until } from 'selenium-webdriver';
-import { expect } from 'chai';
 import { driver } from '../../support/world.js';
 import { sectionClassMap } from "./helpers/sectionClassMap.js";
 
@@ -19,7 +18,7 @@ export default async function getValueOfBag ( sectionName ) {
   // Locate the bag content within the section and get its text
   const valueElement = await sectionElement.findElement( By.css( 'span.bag-content span' ) );
   const actualValue = await valueElement.getText();
-  // console.log( `Value of ${ sectionName } from function is ${ actualValue }` )
+  
   return actualValue;
 };
 
