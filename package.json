@@ -1,0 +1,31 @@
+{
+  "name": "selenium-with-cucumber",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "by Ironboy, Node Hill",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "cucumber-js tests/features --import tests/features/support --import tests/features/step-definitions --world-parameters {\\\"browserName\\\":\\\"chrome\\\"} --format json:tests/results/chrome.json --format @qavajs/console-formatter",
+    "report": "node ./generateReport",
+    "make-steps": "node makeSteps.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^11.0.1",
+    "chai": "^5.1.1",
+    "chromedriver": "^130.0.1",
+    "cucumber-html-reporter": "^6.0.0",
+    "express": "^4.21.1",
+    "open": "^10.1.0",
+    "selenium-webdriver": "^4.25.0"
+  },
+  "devDependencies": {
+    "@qavajs/console-formatter": "^0.8.0"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}

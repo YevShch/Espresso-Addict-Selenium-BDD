@@ -1,0 +1,2 @@
+A test report in JSON and HTML format will be generated here with the results from the tests.
+(Do not remove this file it serves as a holder for the folder in git, since the reoprt files are git-ignored.)
