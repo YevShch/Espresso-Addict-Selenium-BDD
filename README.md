@@ -1,22 +1,11 @@
-# An example of combining Cucumber and Selenium Webddriver in JS
-by Ironboy, Node Hill
-
-* Run **npm install** once.
-* Run the tests/feature-files with **npm test**.
-
-
-# espresso-addict
- A small text adventure - written in vanilla JS
-
-
-# 🖥️ Workshop: Selenium + BDD/Cucumber
+# ☕ Workshop: Selenium + BDD/Cucumber
 
 ## Workshop Overview
-This is a summary of a one-week school workshop where I tested the **Espresso Addict** web application using **Selenium** in combination with **Cucumber/BDD**. The workshop focused on black-box testing, where the internal game code was not examined, and testing was done through the browser interface, interacting with the game's DOM elements.
+This is a summary of a one-week school workshop where I tested the **Espresso Addict** a small text adventure using **Selenium** in combination with **Cucumber/BDD**. The workshop focused on black-box testing, where the internal game code was not examined, and testing was done through the browser interface, interacting with the game's DOM elements.
 
 ### Workshop Objectives:
 During the workshop, I was tasked with:
-- Performing **exploratory testing** of the Espresso Addict game to understand how it works, its rules, how to win, and how to lose.
+- Performing **exploratory testing** of the Espresso Addict game to understand how it works, its rules, how to win, and how to lose. Exploratory Testing Report can be found **[here](https://github.com/YevShch/Espresso-Addict/blob/main/Exploratory_testing.md)**
 - Writing **BDD features in Gherkin** based on user stories derived from my exploratory testing. Each feature was required to have several test scenarios.
 - Combining the **Selenium test framework** with the game code to perform black-box testing. This required interacting with the HTML DOM without looking at the underlying game code.
 - Analyzing the game’s DOM structure to identify useful HTML elements, CSS classes, and IDs to be used in step definitions for BDD tests.
