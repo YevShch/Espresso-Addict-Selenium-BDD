@@ -13,17 +13,17 @@ Verify that at the start of the game, the scoreboard shows the following initial
 - Footer with action buttons (e.g., "Wait", "Move", "Help").
 - Full screen button in the top-right corner of every location.
 ### 3. Scoreboard Functionality
- 3a. **Health: Ensure Health updates correctly when:**
+-  **3.a Health: Ensure Health updates correctly when:**
      -The player drinks espresso (+10 Health).
      -The player waits (loses Health by a specified amount depending on location).
      -Health hits 0, triggering the game over scenario.
- 3b. **Money: Ensure Money decreases when:**
+-  **3b. Money: Ensure Money decreases when:**
      -Buying espresso (-5 Money per cup).
      -Bonuses add Money (e.g., the event from “Jam with the band” gives +5 Money).
      -Espressos: Ensure the counter increases properly:
      -+1 for each espresso consumed.
      - Test what happens when the counter hits 5 (game should end).
- 3c. **In Your Hipster Bag: Ensure it displays correct items:**
+- **3.c In Your Hipster Bag: Ensure it displays correct items:**
      - Updates when items are added (e.g., "a can of beer").
      - Resets when items are used (like giving the beer to the barista).
 ### 4. Location Transitions
