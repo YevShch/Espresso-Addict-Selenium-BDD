@@ -1,6 +1,6 @@
 import { Then } from '@cucumber/cucumber';
 import { expect } from 'chai';
-import getTextFromDescription from './common_steps/getTextFromDescription.js';
+import getTextFromDescription from './helpers/getTextFromDescription.js';
 
 
 Then( "I should see a brief description of the game's purpose", async function () {

@@ -4,7 +4,7 @@ import clickButton from './clickButton.js'
 export default async function startLocation ( location ) {
   console.log( `Starting location: ${ location }` );
   try {
-    await driver.get( 'http://localhost:3000' ); 
+    await driver.get( 'http://localhost:3000' );
     console.log( `Loading game at: http://localhost:3000` );
 
     switch ( location ) {
@@ -25,10 +25,10 @@ export default async function startLocation ( location ) {
         await clickButton( 'Go east' );
         break;
 
-      
+
       case 'in the contry-side':
         await clickButton( 'Go south' );
-       
+
         break;
 
       case 'A guitarist and sax player':
@@ -41,6 +41,6 @@ export default async function startLocation ( location ) {
     }
   } catch ( error ) {
     console.error( `Error while starting location ${ location }: ${ error.message }` );
-    throw error; 
+    throw error;
   }
 }

@@ -10,9 +10,9 @@ Feature: Events
 
     Examples:
       | location                     | event_message                   | event_text                                                                                                                                                                                                                                        | button_text          |
-      | in the Cloud Forest Cafe     | The barista is in a dark corner | The barista is in a dark corner phoning a friend. You overhear parts of the conversion:    |                      |
-      | A guitarist and sax player   | jam with us?                    | The guitarist shouts out to you: 'You look like a hip kid, why don't                       | Jam with the band    |
-      | in a crowded bar             | a can of beer for free          | The bartender offers you a can of beer for free...                                         |                      |
+      | in the Cloud Forest Cafe     | The barista is in a dark corner | The barista is in a dark corner phoning a friend. You overhear parts of the conversion: |                      |
+      | A guitarist and sax player   | jam with us?                    | You look like a hip kid, why don't come on up and jam with us?                          | Jam with the band    |
+      | in a crowded bar             | a can of beer for free          | The bartender offers you a can of beer for free...                                      |                      |
 
   Scenario Outline: Event only occurs once during the game
     Given I am at the location "<location>"

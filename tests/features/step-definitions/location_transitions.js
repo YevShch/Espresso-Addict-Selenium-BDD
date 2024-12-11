@@ -1,8 +1,8 @@
 import { Given, Then } from '@cucumber/cucumber';
 import { By } from 'selenium-webdriver';
 import { expect } from 'chai';
-import getTextFromDescription from './common_steps/getTextFromDescription.js';
-import getActionButtons from './common_steps/getActionButtons.js';
+import getTextFromDescription from './helpers/getTextFromDescription.js';
+import getActionButtons from './helpers/getActionButtons.js';
 
 
 Given( 'I see the initial picture of the location', async function () {

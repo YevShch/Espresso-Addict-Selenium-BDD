@@ -1,9 +1,9 @@
-import { Given, When, Then } from '@cucumber/cucumber';
-import { By, until, Key } from 'selenium-webdriver';
+import { Given, Then } from '@cucumber/cucumber';
+import { By, until} from 'selenium-webdriver';
 import { expect } from 'chai';
 import { driver } from '../support/world.js';
-import getActionButtons from './common_steps/getActionButtons.js'
-import getTextFromDescription from './common_steps/getActionButtons.js';
+import getActionButtons from './helpers/getActionButtons.js'
+
 
 Given('that I have started the game by navigating to {string}', async function(url){
   await driver.get( url );
@@ -15,10 +15,8 @@ Then( 'I should be at the location {string}', async function ( location_text ) {
     until.elementLocated( By.css( 'p.description' ) ),
     10000
   );
-console.log("Found element: ", element)
   await this.driver.wait( until.elementIsVisible( element ), 10000 );
 
-  // Get the tex from element
   const elementText = await element.getText();
 
   expect( elementText ).includes( location_text );
@@ -26,8 +24,7 @@ console.log("Found element: ", element)
 
 
 Then( 'I should see the text {string}', async function ( location_text ) {
-  // const elementText = await getTextFromDescription();
-  // expect( elementText ).to.equal( location_text );
+
   const elementText = await this.driver.wait(
     until.elementLocated( By.css( "p.description" ) ),
     10000
@@ -36,10 +33,6 @@ Then( 'I should see the text {string}', async function ( location_text ) {
   await this.driver.sleep( 2000 );
   // Retrieve the text content of the element
   const text = await elementText.getText();
-
-  // const normalizedElementText = cleanText(text );
-  // const normalizedExpectedText = cleanText( endGameMessage );
-  // expect( normalizedElementText ).to.include( normalizedExpectedText );
 
   expect( text ).to.include( location_text )
 } );

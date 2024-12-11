@@ -1,5 +1,5 @@
 import {When} from '@cucumber/cucumber';
-import clickButton from './common_steps/clickButton.js';
+import clickButton from './helpers/clickButton.js';
 
 
 When('I moved to the location {string}', async function(a){

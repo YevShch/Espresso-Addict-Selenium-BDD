@@ -8,13 +8,23 @@ Feature: Health scoring
     Then the value of my "Health" should be 60
     And the value of my "Espressos" should be 1
 
-
-  Scenario: Health decreases when the player waits
-    Given I am at the location "in the Cloud Forest Cafe"
-    And I know the current value of my "Health"
-    When I click the "Wait" button
-    Then the value of my "Health" should decrease
  
+
+  Scenario Outline: Health decreases based on location when the player waits
+    Given I am at the location "<location>"
+    And I know the current value of my "Health"
+    When I choose to click "Wait" 2 times
+    Then the value of "Health" should "<health_change>"
+
+    Examples:
+      | location                      | health_change             |
+      | outside the Cloud Forest Cafe | decrease                  |
+      | in the Cloud Forest Cafe      | decrease or stay the same |
+      | on an empty street            | decrease                  |
+      | in a crowded bar              | decrease or stay the same |
+      | in the contry-side            | decrease                  |
+      | A guitarist and sax player    | decrease                  |
+
 
   Scenario: Game over when health reaches zero
     Given I am at the location "outside the Cloud Forest Cafe"

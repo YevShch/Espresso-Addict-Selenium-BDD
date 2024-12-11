@@ -1,11 +1,10 @@
 
-import { Given, When, Then } from '@cucumber/cucumber';
-import { By, until, Key } from 'selenium-webdriver';
+import { Given, Then } from '@cucumber/cucumber';
+import { By, until } from 'selenium-webdriver';
 import { expect } from 'chai';
-import clickButton from './common_steps/clickButton.js';
-import getValueOfScores from './common_steps/getValueOfScores.js';
-import getTextFromDescription from './common_steps/getTextFromDescription.js';
-import winTheGame from './common_steps/winTheGame.js';
+import clickButton from './helpers/clickButton.js';
+import getTextFromDescription from './helpers/getTextFromDescription.js';
+import winTheGame from './helpers/winTheGame.js';
 
 
 Then('I should be taken back to the start of the game', async function(){

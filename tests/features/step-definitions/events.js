@@ -1,11 +1,9 @@
-import { Given, When, Then } from '@cucumber/cucumber';
-import { By, until, Key } from 'selenium-webdriver';
+import { When, Then } from '@cucumber/cucumber';
+import { By, until } from 'selenium-webdriver';
 import { expect } from 'chai';
-import getValueOfScores from './common_steps/getValueOfScores.js';
-import clickButton from './common_steps/clickButton.js';
-import getTextFromDescription from './common_steps/getTextFromDescription.js';
-import cleanText from './common_steps/helpers/cleanText.js';
-
+import getValueOfScores from './helpers/getValueOfScores.js';
+import clickButton from './helpers/clickButton.js';
+import getTextFromDescription from './helpers/getTextFromDescription.js';
 
 
 When( 'I wait until the event {string} occurs', async function ( event_message ) {
